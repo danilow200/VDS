@@ -27,7 +27,7 @@ prefs = {
 }
 options.add_experimental_option("prefs", prefs)
 
-chrome = webdriver.Chrome(service=servico, chrome_options=options)
+chrome = webdriver.Chrome(service=servico, options=options)
 chrome.get(url)
 
 wait = WebDriverWait(chrome, 300)
