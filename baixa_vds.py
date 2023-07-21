@@ -36,6 +36,7 @@ wait.until(EC.url_changes(url))
 chrome.get(url_tabela)
 
 chrome.find_element(By.XPATH, '/html/body/form[2]/div/div/div/div/div[1]/div/button[2]').click()
+time.sleep(1)
 
 while len(chrome.find_elements(By.ID, 'dataTableFormId:DataTableId:j_idt252')) < 1:
     time.sleep(1)
