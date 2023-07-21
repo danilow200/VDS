@@ -2,6 +2,7 @@ import pandas as pd
 from datetime import time
 import pandas as pd
 from openpyxl import load_workbook
+from descricao_tra import define_descricao
 
 estados_regioes = {
     'AC': 'Norte',
@@ -114,8 +115,10 @@ def mes_ano(data_entrada):
 def estacao_id(entrada, entrada_2):
     if isinstance(entrada, float):
         estacao.append(entrada_2.lstrip()[0:11])
+        descricao.append(define_descricao(entrada_2.lstrip()[0:11]))
     else:
         estacao.append(entrada)
+        descricao.append(define_descricao(entrada))
 
 def estacao_info(estacao_entrada):
     uf.append(estacao_entrada[0:2])
@@ -141,7 +144,6 @@ for index, row in arquivo_pd.iterrows():
     dividi_data(row['Data abertura'], abertura_data, abertura_hora, abertura_mes)
     dividi_data(row['Término'], termino_data, termino_hora, termino_mes)
     estacao_id(row['Id da Estação'], row['Nome'])
-    descricao.append('')
     estacao_info(estacao[index])
     define_categoria(row['Causa do alerta'])
         
