@@ -5,7 +5,6 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 url = "https://oss.telebras.com.br/cpqdom-web/login.xhtml"
@@ -17,7 +16,6 @@ options.add_argument("--disable-gpu")
 # options.add_argument("--disable-dev-shm-usage")
 # options.add_argument("--no-sandbox")
 options.add_argument("--force-device-scale-factor=0.75")
-servico = Service(ChromeDriverManager().install())
 
 prefs = {
     "download.default_directory": os.getcwd(),
@@ -27,7 +25,7 @@ prefs = {
 }
 options.add_experimental_option("prefs", prefs)
 
-chrome = webdriver.Chrome(service=servico, options=options)
+chrome = webdriver.Chrome(options=options)
 chrome.get(url)
 
 wait = WebDriverWait(chrome, 300)

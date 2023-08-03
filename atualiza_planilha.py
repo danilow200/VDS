@@ -116,26 +116,21 @@ causa_dicionario = {
     'Subbastidor 14uTM400# sobressalente OCM  com defeito SPVL-91# com defeito SSC  sobressalente': 'DWDM - Equipamento PADTEC',
     'SPVL 90': 'DWDM - Equipamento PADTEC',
     'SPVL-91 ': 'DWDM - Equipamento PADTEC',
-    'Duas unidades SCMD3S1A#': 'DWDM - Equipamento PADTEC',
     'T100DCT-4JRT2L':'DWDM - Equipamento PADTEC',
     'T100DCT-4JRT2L	':'DWDM - Equipamento PADTEC',
     'TR400C93-QBF-QBF':'DWDM - Equipamento PADTEC',
     'T100DCT-4PTT2L': 'DWDM - Equipamento PADTEC',
     'SSC-BBAA - FAN 10':'DWDM - Equipamento PADTEC',
-    'SSC-10':'DWDM - Equipamento PADTEC',
-    'ROA4C301AWAHA':'DWDM - Equipamento PADTEC',
     'TM400C92QBFXHACA':'DWDM - Equipamento PADTEC',
     'TM400C92-DBF-XHF-CA.':'DWDM - Equipamento PADTEC',
     'TM400-9B':'DWDM - Equipamento PADTEC',
     'T100DCT-4JT2L':'DWDM - Equipamento PADTEC',
     'TM400C92-DBF-XHF-CA':'DWDM - Equipamento PADTEC',
     'TR400-9B':'DWDM - Equipamento PADTEC',
-    'SSC-10 Modelo BBAA':'DWDM - Equipamento PADTEC',
     'LOA4C211AYAHA':'DWDM - Equipamento PADTEC',
     'SCME-4DP e CVA-4SRA':'DWDM - Equipamento PADTEC',
     '- SPVL-4SM':'DWDM - Equipamento PADTEC',
     'FAN-G8':'DWDM - Equipamento PADTEC',
-    'SCMD3S1A':'DWDM - Equipamento PADTEC',
     'SCMD3S1A':'DWDM - Equipamento PADTEC',
     'T100DCT-4JTMYL':'DWDM - Equipamento PADTEC',
     '- Sobressalente necessário: Placa SSC-AAAA ':'DWDM - Equipamento PADTEC',
@@ -144,14 +139,12 @@ causa_dicionario = {
     ': SCME-4DP':'DWDM - Equipamento PADTEC',
     'VOAB-2A16AA':'DWDM - Equipamento PADTEC',
     '- Modelo: VOAB-2A16AA':'DWDM - Equipamento PADTEC',
-    'SSC-10 AAAA':'DWDM - Equipamento PADTEC',
     'MDSADC21401ST3':'DWDM - Equipamento PADTEC',
     'BOA4C241BDAHA':'DWDM - Equipamento PADTEC',
     '3x XFP 10G Base-LR/LW 1310nm':'DWDM - Equipamento PADTEC',
     'LightPad i1600G - Canal de Voz - CVA-4SRA':'DWDM - Equipamento PADTEC',
     'POA4C141AHAH':'DWDM - Equipamento PADTEC',
     'PADTEC - LOAP14B244AA#268':'DWDM - Equipamento PADTEC',
-    'MXVDC21401GT2 / ROA4C301AWAHA':'DWDM - Equipamento PADTEC',
     'TR400-9B#':'DWDM - Equipamento PADTEC',
     'CVA-4SSA':'DWDM - Equipamento PADTEC',
     'TCX11-4P-A1#':'DWDM - Equipamento PADTEC',
@@ -188,6 +181,7 @@ causa_dicionario = {
     'Aguilera - AE/PX2-F': 'Infraestrutura - Sistema Retificador FCC',
     'UR 37A/48Vcc': 'Infraestrutura - Sistema Retificador FCC',
     'FTLB 4824 S': 'Infraestrutura - Sistema Retificador FCC',
+    'Duas unidades SCMD3S1A#': 'Infraestrutura - Sistema Retificador FCC',
     'Bateria Estacionaria Freedom DF2000 115Ah': 'Infraestrutura - Banco de Baterias',
     'DELTA - Modelo: GES161B1057000-N': 'Infraestrutura - Banco de Baterias',
     'SECPower - Modelo: HMA110': 'Infraestrutura - Banco de Baterias',
@@ -300,7 +294,7 @@ def define_causa(entrada, entrada2, entrada_base, entrada_nome):
     else:
         entrada_tratada = str(entrada2).lstrip()
         entrada_tratada = entrada_tratada.upper()
-        if 'RETIFICADOR' in entrada_tratada or 'ELTEK' in entrada_tratada or 'EMERSON' in entrada_tratada or 'OMIBRA' in entrada_tratada or '(FONTEOMIBRA)' in entrada_tratada or '(FONTEDELTA)' in entrada_tratada:
+        if 'RETIFICADOR' in entrada_tratada or 'ELTEK' in entrada_tratada or 'EMERSON' in entrada_tratada or 'OMIBRA' in entrada_tratada or '(FONTEOMIBRA)' in entrada_tratada or '(FONTEDELTA)' in entrada_tratada or 'SSC-10' in entrada_tratada or 'ROA4C301AWAHA' in entrada_tratada:
             causa.append('Infraestrutura - Sistema Retificador FCC')
         elif 'TSDA' in entrada_tratada or 'TELEMETRIA' in entrada_tratada or 'SIEMENS' in entrada_tratada:
             causa.append('Infraestrutura - Sistema de Alarmes')
