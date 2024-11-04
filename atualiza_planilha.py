@@ -1,4 +1,4 @@
-import pandas as pd 
+import pandas as pd
 from datetime import time
 import pandas as pd
 from openpyxl import load_workbook
@@ -259,20 +259,17 @@ def estacao_info(estacao_entrada):
     lider_regiao.append(lider.get(estacao_entrada[0:2]))
 
 def define_categoria(entrada, entrada_cat, entrada_sub):
-    if isinstance(entrada, float) or entrada == None:
-        if(entrada_cat, float) or entrada_cat == None:
+    if isinstance(entrada, float) or entrada is None:
+        if isinstance(entrada_cat, float) or entrada_cat is None:
             categoria.append('')
             subcategoria.append('')
         else:
             categoria.append(entrada_cat)
             subcategoria.append(entrada_sub)
-    elif str(entrada) == 'Cancelado':
-        categoria.append('Cancelado')
-        subcategoria.append('Cancelado')
-    elif str(entrada) == 'Outros' or str(entrada) == 'outros' or str(entrada) == 'Outro' or str(entrada) == 'outro':
-        categoria.append('Outros')
-        subcategoria.append('Outros')
-    elif ' - ' in entrada:
+    elif str(entrada).lower() in ['cancelado', 'outros', 'outro']:
+        categoria.append(str(entrada).capitalize())
+        subcategoria.append(str(entrada).capitalize())
+    elif ' - ' in entrada and len(entrada.split(' - ')) == 2:
         cat, sub = map(str, entrada.split(' - '))
         categoria.append(cat)
         subcategoria.append(sub)
